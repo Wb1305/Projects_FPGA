@@ -1,0 +1,120 @@
+/*
+`timescale 1ns/1ps
+
+module tb_fsm;
+//inputs
+reg TS;
+reg TL;
+reg C;
+reg reset;
+reg clk;
+//outputs
+wire MR;
+wire MY;
+wire MG;
+wire SR;
+wire SY;
+wire SG;
+wire ST;
+
+fsmModule uut(
+.MR(MR),
+.MY(MY),
+.MG(MG),
+.SR(SR),
+.SY(SY),
+.SG(SG),
+.ST(ST),
+.TS(TS),
+.TL(TL),
+.C(C),
+.reset(reset),
+.CLK(clk)
+);
+
+initial 
+	begin
+		TS=0; TL=0; C=0; reset=1;
+		clk=0;
+		#100; TS=0; TL=1; C=1; reset=0;
+		#100; TS=0; TL=0; C=0; reset=1;
+		#100; TS=1; TL=1; C=0; reset=0;
+		#100; 
+	end
+	always
+	begin
+		#100;
+		clk = ~clk;
+	end
+endmodule
+*/
+`timescale 1ns / 1ps
+
+module tb_fsm;
+    // Outputs
+    wire MR, MY, MG, SR, SY, SG;
+    wire ST;
+    
+    // Inputs
+    reg TS, TL, C, reset, CLK;
+    
+    // Instantiate the Unit Under Test (UUT)
+    fsm uut (
+        .MR(MR),
+        .MY(MY),
+        .MG(MG),
+        .SR(SR),
+        .SY(SY),
+        .SG(SG),
+        .ST(ST),
+        .TS(TS),
+        .TL(TL),
+        .C(C),
+        .reset(reset),
+        .CLK(CLK)
+    );
+    
+    // Clock generation
+    initial begin
+    	CLK = 0; 
+    	forever #5 CLK = ~CLK; 
+		end
+    
+    initial begin
+        // Initialize Inputs
+        TS = 0;
+        TL = 0;
+        C = 0;
+        reset = 1;
+        
+        // Apply reset
+        //#10 reset = 1; // Reset for 10ns
+        #10 reset = 0; // Release reset
+
+        // Test main road green to yellow transition
+        #10 TL = 1; C = 1; 
+       	TL = 0; C = 0; 
+
+        // Test main road yellow to side road green transition
+        #10 TS = 1; 
+        TS = 0;
+
+        // Test side road green to side road yellow transition
+        #10 TL = 1; 
+        TL = 0;
+
+        // Test side road yellow to main road green transition
+        #10 TS = 1;
+        TS = 0;
+
+        // End simulation
+        #10 $finish;
+    end
+    
+    initial begin
+        // Monitor the signals
+        $monitor("Time: %0t | MR=%b MY=%b MG=%b SR=%b SY=%b SG=%b ST=%b TS=%b TL=%b C=%b reset=%b", 
+                 $time, MR, MY, MG, SR, SY, SG, ST, TS, TL, C, reset);
+    end
+endmodule
+

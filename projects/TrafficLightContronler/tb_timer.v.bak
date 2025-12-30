@@ -1,0 +1,60 @@
+`timescale 1ns / 1ps
+
+module tb_timer;
+  // Inputs
+  reg ST;
+  reg CLK;
+
+  // Outputs
+  wire TS;
+  wire TL;
+
+  // Instantiate the Unit Under Test (UUT)
+  timer uut (
+    .TS(TS), 
+    .TL(TL), 
+    .ST(ST), 
+    .CLK(CLK)
+  );
+
+	initial
+	begin
+		CLK=0;
+		forever #5 CLK = ~CLK;
+	end
+
+	// Toggling ST in a repeat loop
+	initial begin
+	  integer i;
+	  for(i = 0; i < 5; i = i + 1) begin  // Repeat 5 times
+	    #160 ST = 1;  // ST becomes 1 after 170 ns
+	    #10  ST = 0;  // ST becomes 0 after 10 ns
+	  end
+	end
+
+  // Initialize variables
+  initial begin
+    // Initialize Inputs
+    ST = 0;
+    CLK = 0;
+
+    // Case 1: Test with ST = 1, reset `value` to 0
+    ST = 1;
+    #10; // Wait for 10 ns
+    ST = 0;
+   
+		
+		//#170 ST=1;
+		//#10 ST=0;
+		
+    // End simulation after 100 ns
+    //#100 $finish;
+  end
+
+  // Monitor the output changes
+  initial begin
+    $monitor("At time %t, TS = %b, TL = %b, ST = %b, value = %0d", 
+              $time, TS, TL, ST, uut.value);
+  end
+endmodule
+

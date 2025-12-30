@@ -1,0 +1,18 @@
+# Reading D:/NMPhuong/intelFPGA181/modelsim_ase/tcl/vsim/pref.tcl
+# Loading project ticTacToeGame
+# Compile of position_decoder.v was successful with warnings.
+# Compile of nospace_detector.v was successful.
+# Compile of position_registers.v failed with 1 errors.
+# Compile of nospace_detector.v failed with 1 errors.
+# Compile of position_registers.v was successful.
+# Compile of nospace_detector.v was successful.
+# Compile of illegal_move_detector.v was successful.
+# Compile of winner_detect_3.v failed with 1 errors.
+# Compile of winner_detect_3.v was successful.
+# Compile of winner_detector.v failed with 2 errors.
+# Compile of winner_detector.v was successful.
+# Compile of position_decoder.v was successful with warnings.
+# Compile of position_decoder.v was successful with warnings.
+# Compile of tic_tac_toe_game.v was successful.
+# Compile of position_decoder.v was successful.
+# Compile of tb_tic_tac_toe.v was successful.

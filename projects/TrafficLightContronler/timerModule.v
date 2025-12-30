@@ -1,0 +1,58 @@
+/*
+`timescale 1ns /1ps
+module timer(
+	output TS, TL,
+	input ST, CLK
+);
+integer value;
+//assign TS = (value>=4);
+//assign TL = (value>=14);
+
+if(value==5) begin
+	TS<=1;
+	TL<=0;
+end
+
+if(value==15) begin
+	TS<=0;
+	TL<=1;
+end
+
+always @(posedge ST or posedge CLK)
+begin
+	if(ST==1)begin value=0; end
+	else begin value=value+1; end
+end
+endmodule
+*/
+
+`timescale 1ns /1ps
+module timer(
+  output reg TS,  // TS needs to be declared as reg because it's assigned inside always block
+  output reg TL,  // TL needs to be declared as reg because it's assigned inside always block
+  input ST, 
+  input CLK
+);
+  integer value;  // Integer value to act as a counter
+
+  // Sequential logic block triggered by ST or CLK
+  always @(posedge ST or posedge CLK) begin
+    if (ST == 1) begin
+      value <= 0;  // Reset counter when ST is high
+      TS <= 0;     // Reset TS
+      TL <= 0;     // Reset TL
+    end else begin
+      value <= value + 1;  // Increment the counter on each clock edge
+
+      if (value == 4) begin
+        TS <= 1;  // Set TS to 1 when value is 5
+        TL <= 0;  // Set TL to 0 when value is 5
+      end else if (value == 14) begin
+        TS <= 0;  // Set TS to 0 when value is 15
+        TL <= 1;  // Set TL to 1 when value is 15
+      end
+    end
+  end
+
+endmodule
+

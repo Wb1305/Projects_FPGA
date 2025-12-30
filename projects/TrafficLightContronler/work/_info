@@ -1,0 +1,157 @@
+m255
+K4
+z2
+13
+!s112 1.1
+!i10d 8192
+!i10e 25
+!i10f 100
+cModel Technology
+dD:/NMPhuong/intelFPGA181/projects
+vfsm
+Z0 !s110 1729482311
+!i10b 1
+!s100 K@M?XAEUIccYTJITdE_H>0
+I<bAFQT_DkM6QzUD20HRYO2
+Z1 VDg1SIo80bB@j0V0VzS_@n1
+Z2 dD:/NMPhuong/intelFPGA181/projects/TrafficLightContronler
+w1728487716
+8D:/NMPhuong/intelFPGA181/projects/TrafficLightContronler/fsmModule.v
+FD:/NMPhuong/intelFPGA181/projects/TrafficLightContronler/fsmModule.v
+L0 3
+Z3 OV;L;10.5b;63
+r1
+!s85 0
+31
+Z4 !s108 1729482311.000000
+!s107 D:/NMPhuong/intelFPGA181/projects/TrafficLightContronler/fsmModule.v|
+!s90 -reportprogress|300|-work|work|-stats=none|D:/NMPhuong/intelFPGA181/projects/TrafficLightContronler/fsmModule.v|
+!i113 1
+Z5 o-work work
+Z6 tCvgOpt 0
+vfsm_tb
+R0
+!i10b 1
+!s100 IzZa4i5>Z:8kTA:X:0@aI1
+I7;X5V[WUPV3@L;ZSkO3NR2
+R1
+R2
+w1729272915
+Z7 8D:/NMPhuong/intelFPGA181/projects/TrafficLightContronler/tb_fsm.v
+Z8 FD:/NMPhuong/intelFPGA181/projects/TrafficLightContronler/tb_fsm.v
+Z9 L0 53
+R3
+r1
+!s85 0
+31
+R4
+Z10 !s107 D:/NMPhuong/intelFPGA181/projects/TrafficLightContronler/tb_fsm.v|
+Z11 !s90 -reportprogress|300|-work|work|-stats=none|D:/NMPhuong/intelFPGA181/projects/TrafficLightContronler/tb_fsm.v|
+!i113 1
+R5
+R6
+vmain
+R0
+!i10b 1
+!s100 KVl95=1MW_;XS_NU<IW_A0
+IYfMEKg9BaO:>hO0>F=n;L0
+R1
+R2
+w1728487223
+8D:/NMPhuong/intelFPGA181/projects/TrafficLightContronler/main.v
+FD:/NMPhuong/intelFPGA181/projects/TrafficLightContronler/main.v
+L0 3
+R3
+r1
+!s85 0
+31
+R4
+!s107 D:/NMPhuong/intelFPGA181/projects/TrafficLightContronler/main.v|
+!s90 -reportprogress|300|-work|work|-stats=none|D:/NMPhuong/intelFPGA181/projects/TrafficLightContronler/main.v|
+!i113 1
+R5
+R6
+vtb_fsm
+!s110 1729482370
+!i10b 1
+!s100 O0Lmd`X@Z<cB5IA6WBYP21
+IQmJg`0?g>RK[LJP=7WmAN3
+R1
+R2
+w1729482360
+R7
+R8
+R9
+R3
+r1
+!s85 0
+31
+!s108 1729482370.000000
+R10
+R11
+!i113 1
+R5
+R6
+vtb_timer
+!s110 1729484936
+!i10b 1
+!s100 VZb1I3>0Y1o7ckiOPc0Y00
+Io>;]amdJ8M:B2>[B`8md`3
+R1
+R2
+w1729484929
+Z12 8D:/NMPhuong/intelFPGA181/projects/TrafficLightContronler/tb_timer.v
+Z13 FD:/NMPhuong/intelFPGA181/projects/TrafficLightContronler/tb_timer.v
+L0 3
+R3
+r1
+!s85 0
+31
+!s108 1729484936.000000
+Z14 !s107 D:/NMPhuong/intelFPGA181/projects/TrafficLightContronler/tb_timer.v|
+Z15 !s90 -reportprogress|300|-work|work|-stats=none|D:/NMPhuong/intelFPGA181/projects/TrafficLightContronler/tb_timer.v|
+!i113 1
+R5
+R6
+vtimer
+!s110 1729508256
+!i10b 1
+!s100 ZY6^J:hVKOKM1;en8[^^O1
+I:]TSe>ElOFEenLi0;LXZo1
+R1
+R2
+w1729485050
+8D:/NMPhuong/intelFPGA181/projects/TrafficLightContronler/timerModule.v
+FD:/NMPhuong/intelFPGA181/projects/TrafficLightContronler/timerModule.v
+L0 30
+R3
+r1
+!s85 0
+31
+!s108 1729508255.000000
+!s107 D:/NMPhuong/intelFPGA181/projects/TrafficLightContronler/timerModule.v|
+!s90 -reportprogress|300|-work|work|-stats=none|D:/NMPhuong/intelFPGA181/projects/TrafficLightContronler/timerModule.v|
+!i113 1
+R5
+R6
+vtimer_tb
+R0
+!i10b 1
+!s100 HkzjT5ZNH]3AiFMz4XZ3L3
+ID9jEa`=km=4QEMAh<bgPD2
+R1
+R2
+w1729482303
+R12
+R13
+L0 3
+R3
+r1
+!s85 0
+31
+R4
+R14
+R15
+!i113 1
+R5
+R6
